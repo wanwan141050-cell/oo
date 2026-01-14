@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>gameEvent</name>
+    <events>
+        <variable constant="0" name="timer" sid="812080932079289" static="0" type="number">20</variable>
+        <variable constant="0" name="score" sid="345975672902302" static="0" type="number">10</variable>
+        <event-block sid="947945022630133">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="495076540730360" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="196798788716716" type="System" />
+                <action id="0" name="Set text" sid="502342743759868" type="txttimer">
+                    <param id="0" name="Text">&quot;Timer : &quot;&amp;Timer</param>
+                </action>
+                <action behavior="Turret" id="1" name="Add object to target" sid="451674564698368" type="obj_turret">
+                    <param id="0" name="Target">Player2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="830566254050844">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="383267607467530" type="Player2">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="899531936181113" type="System">
+                    <param id="0" name="Seconds">2</param>
+                </action>
+                <action id="-26" name="Restart layout" sid="958142248117755" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="449272069194474">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="353433875162140" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="182964959849735" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">100</param>
+                </action>
+                <action id="0" name="Set text" sid="357216795829315" type="txtScore">
+                    <param id="0" name="Text">&quot;score&quot;&amp;score</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="577363621415588">
+            <conditions>
+                <condition id="-18" name="On created" sid="632113738486653" type="golditem" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="169523703306898" type="golditem">
+                    <param id="0" name="Angle">90</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="374845221421252">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="307277117545163" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="588339890815630" type="System">
+                    <param id="0" name="Object to create">golditem</param>
+                    <param id="1" name="Layer">&quot;game&quot;</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">99</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="920809915831379">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="904687959743326" type="Player2">
+                    <param id="0" name="Object">golditem</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="138629445224870" type="golditem" />
+                <action id="-10" name="Add to" sid="174421199984401" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="424267224736709">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="832036698244886" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="206235994495779" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="730840210758910" type="txttimer">
+                    <param id="0" name="Text">&quot;Timer : &quot;&amp;Timer</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="342689018345111">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="222629960066384" type="System">
+                    <param id="0" name="Interval (seconds)">0.5</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="292535328156225" type="System">
+                    <param id="0" name="Object to create">Sprite2</param>
+                    <param id="1" name="Layer">&quot;game&quot;</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">-50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="508941806988332">
+            <conditions>
+                <condition id="-18" name="On created" sid="572303298570443" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="138762852060877" type="Sprite2">
+                    <param id="0" name="Angle">45</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="578090843881579">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="841866242178394" type="Player2">
+                    <param id="0" name="Object">Sprite2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="603905380471685" type="Sprite2" />
+                <action id="-11" name="Subtract from" sid="368779652279589" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">1000</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="928758844515420">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="685641008634184" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="559850757276265" type="System" />
+            </actions>
+            <sub-events>
+                <event-block sid="757243803367604">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="556378730944652" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">int(WebStorage.LocalValue(&quot;HightScore&quot;))</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="547981512935941" type="WebStorage">
+                            <param id="0" name="Key">&quot;HightScore&quot;</param>
+                            <param id="1" name="Value">score</param>
+                        </action>
+                        <action id="-26" name="Restart layout" sid="192067980405956" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="513745932414078">
+            <conditions>
+                <condition behavior="Turret" id="1" name="On shoot" sid="327805350828031" type="obj_turret" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="547819331333853" type="System">
+                    <param id="0" name="Object to create">obj_bullet</param>
+                    <param id="1" name="Layer">&quot;game&quot;</param>
+                    <param id="2" name="X">obj_turret.X</param>
+                    <param id="3" name="Y">obj_turret.Y</param>
+                </action>
+                <action id="-8" name="Set angle" sid="253889715962311" type="obj_bullet">
+                    <param id="0" name="Angle">obj_turret.Angle </param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="372783367459792">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="136611229938599" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="429238361172252" type="Audio">
+                            <param id="0" name="Audio file">OGG  geme_retro_jump_2-206573</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="417000349004954">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="172336491457972" type="Player2">
+                    <param id="0" name="Object">obj_bullet</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="692122298469166" type="Player2">
+                    <param id="0" name="Instance variable">health</param>
+                    <param id="1" name="Value">25</param>
+                </action>
+                <action id="-5" name="Set width" sid="459537255125073" type="obj_green">
+                    <param id="0" name="Width">Player2.health</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="395727078176717" type="Player2">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="962140190884052">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="659761829763943" type="Player2">
+                            <param id="0" name="Instance variable">health</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="960266282614693" type="System">
+                            <param id="0" name="Layout">gameLayout</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="526831654463030">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="662809832816125" type="obj_turret" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="426379482471554" type="System">
+                    <param id="0" name="Object to create">obj_turret</param>
+                    <param id="1" name="Layer">&quot;game&quot;</param>
+                    <param id="2" name="X">random (LayoutWidth)</param>
+                    <param id="3" name="Y">random(LayoutHeight)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="806268115205338">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="913201252890178" type="Player2" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="714033694883115">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="816576301646123" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="602423027777844" type="Audio">
+                            <param id="0" name="Audio file">OGG  coin-upaif-14631</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="371297863195090">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="585398808808875" type="obj_turret" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="593318347786942" type="System">
+                    <param id="0" name="Object to create">obj_turret</param>
+                    <param id="1" name="Layer">&quot;game&quot;</param>
+                    <param id="2" name="X">random(LayoutWidth)</param>
+                    <param id="3" name="Y">random(LayoutHeight)</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

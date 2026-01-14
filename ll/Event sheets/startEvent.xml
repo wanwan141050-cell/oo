@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>startEvent</name>
+    <events>
+        <event-block sid="241928610510885">
+            <conditions>
+                <condition id="3" name="On touched object" sid="355339505905936" type="Touch">
+                    <param id="0" name="Object">btn_start</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="587323117698674" type="System">
+                    <param id="0" name="Layout">gameLayout</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="948224176621706">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="166038344698039" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="805096132624309">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="149335076361652" type="WebStorage">
+                            <param id="0" name="Key">&quot;HightScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="470573474115575" type="txt_hightscore">
+                            <param id="0" name="Text">&quot;HightScore&quot;&amp;WebStorage.LocalValue(&quot;HightScore&quot;)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="197155831628963">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="550234966095941" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set local value" sid="412025977239688" type="WebStorage">
+                            <param id="0" name="Key">&quot;HightScore&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="253127246409810" type="txt_hightscore">
+                            <param id="0" name="Text">&quot;HightScore : 0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="315934659425530">
+                    <conditions>
+                        <condition id="3" name="Local key exists" sid="473753786224011" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="146974493904705">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="126388083266622" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Mute&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="781021701991396" type="btn_mute">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="543662783298278">
+                            <conditions>
+                                <condition id="7" name="Compare key value (as number)" sid="273645201594802" type="WebStorage">
+                                    <param id="0" name="Key">&quot;Mute&quot;</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="488185255471205" type="btn_mute">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="802187271951576">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="886377500528801" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="482674547506460" type="btn_mute">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="359522191250012" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="820554637127393">
+            <conditions>
+                <condition id="3" name="On touched object" sid="873364712622458" type="Touch">
+                    <param id="0" name="Object">btn_mute</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="653066580531258">
+                    <conditions>
+                        <condition id="7" name="Compare key value (as number)" sid="136595916177077" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="962411517912574" type="btn_mute">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="856965895303852" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                            <param id="1" name="Value">&quot;1&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="963726544403173">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="934285462053970" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="640066458178330" type="btn_mute">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="0" name="Set local value" sid="400369636149013" type="WebStorage">
+                            <param id="0" name="Key">&quot;Mute&quot;</param>
+                            <param id="1" name="Value">&quot;0&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

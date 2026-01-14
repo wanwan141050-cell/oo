@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>jump game</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author>Araya</author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>3e7408ixidgbw</unique-id>
+    <saved-with-version>27500</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Zack0Wack0/Scirra" id="WebStorage" version="1">WebStorage</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Turret" version="1">Turret</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Player2" sid="519383286730639">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="health" sid="970108083950010" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Platform" sid="349006831069693">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="315665734973574">
+                    <behavior id="Flash" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471216641471352" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_floor" sid="453049627794730">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="712656489666839">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="710600772976597" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite" sid="337868602670058">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="481951249009880" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txtScore" sid="541810344880547">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="golditem" sid="643349097807867">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="357627759367835">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="141113888463231" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="577107269724243">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="477163120811953">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="159956818495357" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_turret" sid="227762922329237">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Turret" sid="733501947724014">
+                    <behavior id="Turret" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="685757248477941">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="230064223707204" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_bullet" sid="325094704137618">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="483866960475746">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="881493674489594" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.6" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txttimer" sid="863919308578252">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="obj_bg1" sid="917636212848911">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="119787570385484" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="logo" sid="194855043195564">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="btn_start" sid="362509722737214">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Touch" sid="687863881519106">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="txt_hightscore" sid="894660881274813">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LocalStorage" sid="659360273878720">
+            <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="WebStorage" sid="312405712015976">
+            <plugin id="WebStorage" />
+        </object-type>
+        <object-type name="obj_green" sid="796201987085423">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="940436047336599" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="818847068011775">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="471795496345836" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obg_red" sid="766189748761310">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="813633958721674" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0.52" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="943392935169545">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="btn_mute" sid="699765445262880">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="915414623074275" speed="5">
+                    <frame duration="1" hotspotX="0.502058" hotspotY="0.5" original-source="C:\Users\araya\Desktop\เสียง\btn_mute1.png" />
+                    <frame duration="1" hotspotX="0.501695" hotspotY="0.5" original-source="C:\Users\araya\Desktop\เสียง\aa.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>gameLayout.xml</layout>
+        <layout>startLayout.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>gameEvent.xml</event-sheet>
+        <event-sheet>startEvent.xml</event-sheet>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Touch" uid="25">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="LocalStorage" uid="27" />
+        <global-instance type="WebStorage" uid="28" />
+        <global-instance type="Audio" uid="31">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
+    </global-instances>
+    <sounds-folder>
+        <file name="OGG  coin-upaif-14631.ogg" />
+        <file name="OGG  geme_retro_jump_2-206573.ogg" />
+        <file name="pew_pew-dknight556-1379997159.ogg" />
+        <file name="phmkh-othskhrabphii.ogg" />
+        <file name="Recording-_3_.ogg" />
+        <file name="untitled_Y2fYHgT.ogg" />
+    </sounds-folder>
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
